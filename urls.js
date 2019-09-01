@@ -1,12 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
- <button id="btn" onclick="test()">点击按钮</button>
-	<br>
+<button id="btn" onclick="test()" >123</button>
+<br>
 <iframe src="https://reurl.cc/ao7XZ" id="iframe" width="250" height="1000"></iframe>
-</head>
-<body>
- 
+
 <script>
     document.getElementById("btn").click();
 	var a = 0;
@@ -25,14 +20,10 @@ function insert(c){
 document.getElementById("iframe").src="https://reurl.cc/ao7XZ";
   }
     if (c==1){
-document.getElementById("iframe").src="https://kk665403.pixnet.net/blog";
+document.getElementById("iframe").src="https://zi.media/@kk665403pixnetnetblog/post/yFWufI";
   }
 }
 		
 		
 	}
 </script>
- 
- 
-</body>
-</html>
