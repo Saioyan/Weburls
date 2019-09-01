@@ -3,44 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+<button id="btn" onclick="test()" >123</button>
+<br>
+<iframe src="https://reurl.cc/ao7XZ" id="iframe" width="250" height="1000"></iframe>
 </head>
 <body>
-
-
 <script>
-document.getElementById("btn").click();
-var urls = "..."
+    document.getElementById("btn").click();
+	var a = 0;
+	var b = 1;
+	var c = 0;
+	var urls = ""
+	function test(){
 function getRandom(min,max){
     return Math.floor(Math.random()*(max-min+1))+min;
 };
-a=getRandom(0,1);
+c=getRandom(0,1);
 
-function ABC(a){
-  if (a==0){
-  urls="https://reurl.cc/ao7XZ"
+	insert(c);
+function insert(c){
+  if (c==0){
+document.getElementById("iframe").src="https://zi.media/@kk665403pixnetnetblog/post/XIBcLv";
   }
-  if (a==1){
-  urls="https://kk665403.pixnet.net/blog"
+    if (c==1){
+document.getElementById("iframe").src="https://zi.media/@kk665403pixnetnetblog/post/yFWufI";
   }
-};
-ABC(a);
-function changeSrc(a){
-  if (a==0){
-  document.getElementById("iframe").src="https://reurl.cc/ao7XZ";
-  }
-    if (a==1){
-  document.getElementById("iframe").src="https://kk665403.pixnet.net/blog";
-  }
-
-document.getElementById("button").click();
 }
 
+
+	}
 </script>
-<input type="button" onclick="changeSrc(a)" value="Change Source">
-<br>
-
-
-<iframe src="https://reurl.cc/ao7XZ" id="iframe" width="250" height="1000"></iframe>
 
 </body>
 </html>
