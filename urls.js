@@ -18,7 +18,7 @@
 function getRandom(min,max){
     return Math.floor(Math.random()*(max-min+1))+min;
 };
-c=getRandom(0,1);
+c=getRandom(0,10);
 
 	insert(c);
 function insert(c){
