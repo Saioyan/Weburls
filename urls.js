@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-<button id="btn" onclick="test()" >123</button>
+<button id="btn" onclick="test()" ></button>
 <br>
 <iframe src="https://reurl.cc/ao7XZ" id="iframe" width="250" height="1000"></iframe>
 </head>
@@ -25,7 +25,7 @@ function insert(c){
   if (c==0){
 document.getElementById("iframe").src="https://zi.media/@kk665403pixnetnetblog/post/XIBcLv";
   }
-    if (c==1){
+   else{
 document.getElementById("iframe").src="https://zi.media/@kk665403pixnetnetblog/post/yFWufI";
   }
 }
