@@ -18,7 +18,7 @@
 function getRandom(min,max){
     return Math.floor(Math.random()*(max-min+1))+min;
 };
-c=getRandom(0,10);
+c=getRandom(0,20);
 
 	insert(c);
 function insert(c){
@@ -54,6 +54,36 @@ document.getElementById("iframe").src="https://zi.media/@kk665403pixnetnetblog/p
   }
 	else if(c==10){
 document.getElementById("iframe").src="https://zi.media/@kk665403pixnetnetblog/post/g5E2Ef";
+  }
+		else if(c==11){
+document.getElementById("iframe").src="https://zi.media/@kk665403pixnetnetblog/post/m7kJMT";
+  }
+		else if(c==12){
+document.getElementById("iframe").src="https://zi.media/@kk665403pixnetnetblog/post/anYXhf";
+  }
+		else if(c==13){
+document.getElementById("iframe").src="https://zi.media/@kk665403pixnetnetblog/post/mnZyKR";
+  }
+		else if(c==14){
+document.getElementById("iframe").src="https://zi.media/@kk665403pixnetnetblog/post/IM58jU";
+  }
+		else if(c==15){
+document.getElementById("iframe").src="https://zi.media/@kk665403pixnetnetblog/post/xxAfR3";
+  }
+		else if(c==16){
+document.getElementById("iframe").src="https://zi.media/@kk665403pixnetnetblog/post/xSses7";
+  }
+		else if(c==17){
+document.getElementById("iframe").src="https://zi.media/@kk665403pixnetnetblog/post/EA4ofL";
+  }
+		else if(c==18){
+document.getElementById("iframe").src="https://zi.media/@kk665403pixnetnetblog/post/zYNNNf";
+  }
+		else if(c==19){
+document.getElementById("iframe").src="https://zi.media/@kk665403pixnetnetblog/post/D8QfpQ";
+  }
+		else if(c==20){
+document.getElementById("iframe").src="https://zi.media/@kk665403pixnetnetblog/post/iwWVsj";
   }
 }
 
