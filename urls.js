@@ -5,7 +5,7 @@
     <title>Title</title>
 <button id="btn" onclick="test()" ></button>
 <br>
-<iframe src="https://reurl.cc/ao7XZ" id="iframe" width="250" height="1000"></iframe>
+<iframe src="https://reurl.cc/722M9d" id="iframe" width="250" height="1000"></iframe>
 </head>
 <body>
 <script>
