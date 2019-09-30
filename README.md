@@ -1,7 +1,7 @@
 # Weburls
 # 安裝需求
 軟體  
-python3.6  
+python3  
 
 套件  
 tkinter  
