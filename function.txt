@@ -2,19 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-<button id="btn" onclick="test()" ></button>
+    <title>Saioyan</title>
+<button id="btn" onclick="ref()" ></button>
 <br>
 <iframe src="https://reurl.cc/Rd1YoZ" id="iframe" width="250" height="1000"></iframe>
 </head>
 <body>
 <script>
+    setInterval(function(){ref()},10000);
+function ref(){
     document.getElementById("btn").click();
-	var a = 0;
+    var a = 0;
 	var b = 1;
 	var c = 0;
 	var urls = ""
-	function test(){
+	c=getRandom(0,550);
+	insert(c);
+}
 function getRandom(min,max){
     return Math.floor(Math.random()*(max-min+1))+min;
-};
+}
