@@ -1,7 +1,44 @@
+###########################################creat urls database
+import pandas as pd
 import random
 import sys,os
 import tkinter as tk
 from tkinter import filedialog
+import subprocess
+infile = 'D:\\urldb\jfile.txt'
+output = 'D:\\urldb\\urls.txt'
+with open(infile,mode="r",encoding="utf-8") as file:
+    strr = file.read()
+a = len(strr)
+li=[]
+for i in range(0,a):
+#strr.find後面的網址修改為自己帳號的網址
+    num = strr.find('https://zi.media/@kk665403pixnetnetblog/post/')
+    if num == -1:
+        break
+    if num > 0 :
+        num2 = strr.index('"}')
+        strc = strr[num:num2]
+        li.append(strc)
+        strr = strr[num2+1:]
+li.remove('')
+str_url=''
+for i in li:
+    if 'removed' not in i and 'doing' not in i:
+        str_url += i + '\n'
+str_url = str_url.replace('\n\n','\n')
+str_url = str_url[:-1]
+fg = open(output, "w", encoding="utf-8")
+fg.write(str_url)
+li = ['urls','0','1','2','3']
+df = pd.DataFrame(pd.read_csv(output,sep='"',names=li))
+str_o=''
+for i in df['urls'] :
+    str_o += i +'\n'
+fg = open('D:\\urldb\\url_db.txt', "w", encoding="utf-8")
+fg.write(str_o)
+os.remove(output)
+##############################################random urls
 root = tk.Tk()
 root.withdraw()
 file_path = filedialog.askopenfilename()
@@ -33,6 +70,7 @@ h = int(inum)
 with open(file_path,"r",encoding="utf-8") as fp:
     strr = fp.read()
 strr = strr.split("\n")
+strr.remove('')
 with open(fun,"r",encoding="utf-8") as fp:
     strr2 = fp.read()
 lenurl = len(strr)
@@ -53,13 +91,18 @@ n=1
 body=''
 head = '    insert(c);'+'\n'+'function insert(c){'+'\n'+'    if (c==0){'+'\n'+'document.getElementById("iframe").src="https://zi.media/@kk665403pixnetnetblog/post/XIBcLv";'+'\n'+'}'+'\n'
 tail = '}'+'\n'+'</script>'+'\n'+'</body>'+'\n'+'</html>'
+
 for i in li2 :
     body += '    else if(c=='+str(n)+'){'+'\n'+'document.getElementById("iframe").src="'+str(i)+'";'+'\n'+'}'+'\n'
     n+=1
-body += '\n'+ '}'+'\n'
+
 s = 'c=getRandom(0,'+str(len(li2))+');'
 strr2 += '\n'+s+'\n'
 total = strr2 + head + body + tail
 print(total)
 fg = open(out, "w", encoding="utf-8")
 fg.write(total)
+
+
+
+
