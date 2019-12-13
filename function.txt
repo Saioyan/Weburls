@@ -9,7 +9,7 @@
 </head>
 <body>
 <script>
-    setInterval(function(){ref()},10000);
+    setInterval(function(){ref()},600000);
 function ref(){
     document.getElementById("btn").click();
     var a = 0;
