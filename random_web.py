@@ -17,7 +17,7 @@ for i in range(0,a):
     if num == -1:
         break
     if num > 0 :
-        num2 = strr.index('"}')
+        num2 = strr.index('", "url"')
         strc = strr[num:num2]
         li.append(strc)
         strr = strr[num2+1:]
@@ -37,6 +37,7 @@ for i in df['urls'] :
     str_o += i +'\n'
 fg = open('D:\\urldb\\url_db.txt', "w", encoding="utf-8")
 fg.write(str_o)
+
 os.remove(output)
 ##############################################random urls
 root = tk.Tk()
