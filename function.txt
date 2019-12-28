@@ -9,7 +9,11 @@
 </head>
 <body>
 <script>
+    setTimeout(function(){oneclick()},1000);
     setInterval(function(){ref()},600000);
+function oneclick(){
+document.getElementById("btn").click();
+}
 function ref(){
     document.getElementById("btn").click();
     var a = 0;
