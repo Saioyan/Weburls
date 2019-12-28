@@ -11,21 +11,35 @@ with open(infile,mode="r",encoding="utf-8") as file:
     strr = file.read()
 a = len(strr)
 li=[]
+
+
 for i in range(0,a):
 #strr.find後面的網址修改為自己帳號的網址
-    num = strr.find('https://zi.media/@kk665403pixnetnetblog/post/')
+    num = strr.find('zi_url')
     if num == -1:
         break
     if num > 0 :
-        num2 = strr.index('", "url"')
-        strc = strr[num:num2]
-        li.append(strc)
+        num2 = strr.find('"status_code"')
+        strc = strr[num+10:num2+22]
+
+        if 'remov' not in strc or 'doin' not in strc :
+            li.append(strc)
         strr = strr[num2+1:]
-li.remove('')
+
+print(li)
 str_url=''
+
+n=0
 for i in li:
-    if 'removed' not in i and 'doing' not in i:
+    if 'http' in i:
+        num = i.find('http')
+        num2 = i.find('",')
+        out = i[num:num2]
         str_url += i + '\n'
+        n+=1
+print('have:',n,' urls in db')
+
+
 str_url = str_url.replace('\n\n','\n')
 str_url = str_url[:-1]
 fg = open(output, "w", encoding="utf-8")
