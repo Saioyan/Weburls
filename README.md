@@ -4,8 +4,8 @@
 python3
 
 # creat file in D:\
-creat json file jf.txt
-creat html header function.txt
+creat json file jf.txt  
+creat html header function.txt  
 
 # 執行random_web.py
 產出output.txt  
