@@ -1,80 +1,34 @@
-import random
-import sys
-import tkinter as tk
-from tkinter import filedialog
-import json
-##############################################random urls
 fun = 'D:\\urldb\\function.txt'
 out = 'D:\\urldb\\output.txt'
 with open("D:\\urldb\\jf.txt","r",encoding="utf-8") as fp:
     stc=fp.read()
-j = json.loads(stc)
-n = 0
-m = 0
-strr=[]
-for i in j['data']:
-    url = i['zi_url']
-    stat = i['status_name']
-    if stat == '已同步':
-        strr.append(url)
-        m+=1
-    n+=1
-print('總篇數:',n)
-print('可抽取篇數:',m)
-
-def is_number(s):
-    try:
-        float(s)
-        return True
-    except ValueError:
-        pass
-    try:
-        import unicodedata
-        unicodedata.numeric(s)
-        return True
-    except (TypeError, ValueError):
-        pass
-
-    return False
-inum = input('輸入欲抽取數量:')
-if is_number(inum) == True:
-    print('Running')
-else:
-    print('Check input not number')
-    sys.exit()
-h = int(inum)
-
-
 with open(fun,"r",encoding="utf-8") as fp:
-    strr2 = fp.read()
-lenurl = len(strr)
-if h > lenurl :
-    print('抽取數量大於庫存')
-    sys.exit()
-
-dic1={}
-for i in range(0,lenurl):
-    dic1.setdefault(i,strr[i])
-
-lenurl2 = lenurl
-li2=[]
-for i in range(0,h) :
-    c = int(random.uniform(0, lenurl2))
-    li2.append(strr[c])
-    strr.remove(strr[c])
-    lenurl2 = len(strr)
-
+    strr=fp.read()
+number = stc.count('https')
+li = []
+for i in range(number):
+    num = stc.find('https')
+    stc = stc[num:]
+    num2 = stc.find('"')
+    url = stc[:num2]
+    li.append(url)
+    stc = stc[num2:]
+for i in li:
+    if 'zi.media' not in i:
+        li.remove(i)
+lenurl = len(li)
 
 n=1
 body=''
 head = '    insert(c);'+'\n'+'function insert(c){'+'\n'+'    if (c==0){'+'\n'+'document.getElementById("iframe").src="https://zi.media/@kk665403pixnetnetblog/post/XIBcLv";'+'\n'+'}'+'\n'
 tail = '}'+'\n'+'</script>'+'\n'+'</body>'+'\n'+'</html>'
-for i in li2 :
+for i in li :
     body += '    else if(c=='+str(n)+'){'+'\n'+'document.getElementById("iframe").src="'+str(i)+'";'+'\n'+'}'+'\n'
     n+=1
 
-s = 'c=getRandom(0,'+str(len(li2))+');'
-strr2 += '\n'+s+'\n'
-total = strr2 + head + body + tail
+s = 'c=getRandom(0,'+str(len(li))+');'
+strr += '\n'+s+'\n'
+total = strr + head + body + tail
+print(total)
 fg = open(out, "w", encoding="utf-8")
 fg.write(total)
