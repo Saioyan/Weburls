@@ -3,7 +3,7 @@
 軟體
 python3
 
-# creat file in D:\
+# creat file in D:\urldb
 creat json file jf.txt  
 creat html header function.txt  
 
